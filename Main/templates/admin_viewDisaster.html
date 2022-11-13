@@ -1,0 +1,67 @@
+{% extends "admin.html" %}
+{% block content %}
+
+
+            <!-- view disaster details -->
+             <div class="row">
+                {% for x in item%}
+                <div class="col-12 ">
+                    <div class="card flex-fill" style="border-radius:10px; margin: 30px;">
+                        <div class="card-header">
+        
+                            <h5 class="card-title mb-0">Place : {{x.dis_place}}</h5>
+                            <p>{{x.dis_datetime}}</p>
+                        </div>
+                        <table class="table table-hover my-0">
+                            <thead>
+                                <tr>
+                                    <th>SERVICE</th>
+                                    <th class="d-none d-xl-table-cell">NAME AND PLACE</th>
+                                    <th class="d-none d-xl-table-cell">ACCEPTED TIME</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ambulance</td>
+                                    
+                                    <td class="d-none d-xl-table-cell">{{x.dis_ambulance.location}}</td>
+                                    <td class="d-none d-xl-table-cell">{{x.dis_ambulance.service_time}}</td>
+                                    <td><span class="badge bg-success">{{x.dis_ambulance.service_status}}</span></td>
+                                    
+                                    <!-- <td><span class="badge bg-warning">In progress</span></td> -->
+                                </tr>
+                                <tr>
+                                    <td>Police</td>
+                                       
+                                    <td class="d-none d-xl-table-cell">{{x.dis_police.location}}</td>
+                                    <td class="d-none d-xl-table-cell">{{x.dis_police.service_time}}</td>
+                                    <td><span class="badge bg-success">{{x.dis_police.service_status}}</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Hospital</td>
+                             
+                                    <td class="d-none d-xl-table-cell">{{x.dis_hospital.location}}</td>
+                                    <td class="d-none d-xl-table-cell">{{x.dis_hospital.service_time}}</td>
+                                    <td><span class="badge bg-success">{{x.dis_hospital.service_status}}</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Fire and Rescue</td>
+                      
+                                    <td class="d-none d-xl-table-cell">{{x.dis_FF.location}}</td>
+                                    <td class="d-none d-xl-table-cell">{{x.dis_FF.service_time}}</td>
+                                    <td><span class="badge bg-success">{{x.dis_FF.service_status}}</span></td>
+                                </tr>
+                          
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- view disaster details end -->
+              
+
+
+
+{% endblock content %}

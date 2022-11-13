@@ -1,0 +1,117 @@
+{% extends "admin.html" %}
+{% block content %}
+
+	<div class="container-fluid p-0">
+
+        <h1 class="h3 mb-3"><strong>Services</strong></h1>
+
+            <div class="row">
+                <div class=" d-flex">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card" style="cursor:pointer ;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col mt-0">
+                                                <h5 class="card-title">Ambulance</h5>
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="stat text-primary">
+                                                    <i class="align-middle" data-feather="truck"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="totalservice" style="display:flex ; align-items:center">
+                                            <h5 class="card-title" >Total Registered :</h5>
+                                        <h1 class="mt-1 mb-3">&nbsp;&nbsp;{{ambulance}}</h1>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <div class="col-sm-3">
+                                    <div class="card"  style="cursor:pointer ;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col mt-0">
+                                                <h5 class="card-title">Police</h5>
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="stat text-primary">
+                                                    <i class="align-middle" data-feather="users"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="totalservice" style="display:flex ; align-items:center">
+                                            <h5 class="card-title" >Total Registered :</h5>
+                                        <h1 class="mt-1 mb-3">&nbsp;&nbsp;{{police}}</h1>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card"  style="cursor:pointer ;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col mt-0">
+                                                <h5 class="card-title">Fire And Rescue</h5>
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="stat text-primary">
+                                                    <i class="align-middle" data-feather="hard-drive"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="totalservice" style="display:flex ; align-items:center">
+                                            <h5 class="card-title" >Total Registered :</h5>
+                                        <h1 class="mt-1 mb-3">&nbsp;&nbsp;{{ff}}</h1>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card"  style="cursor:pointer ;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col mt-0">
+                                                <h5 class="card-title">Hospital</h5>
+                                            </div>
+
+                                            <div class="col-auto">
+                                                <div class="stat text-primary">
+                                                    <i class="align-middle" data-feather="home"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="totalservice" style="display:flex ; align-items:center">
+                                            <h5 class="card-title" >Total Registered :</h5>
+                                        <h1 class="mt-1 mb-3">&nbsp;&nbsp;{{hospital}}</h1>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+
+    </div>
+			
+{% endblock content %}

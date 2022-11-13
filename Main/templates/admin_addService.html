@@ -1,0 +1,103 @@
+
+{% extends "admin.html" %}
+{% block content %}
+
+
+    <!-- Add service form -->
+        <section>
+            <div class="container mt-4">
+                <div class="row" style="margin-top: 10rem;margin-bottom: 10rem;">
+                    <div class="col-md-6" style="margin-left: 18rem;">
+                        <h2 class="text-center">Add Service</h2>
+                        <form method="POST" onsubmit="return validate()">
+                        <label for="">Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                        <label for="">Place</label>
+                        <input type="hidden" name="place" id="place" required>
+                            <ge-autocomplete
+                            api_key="ge-16de3168aa4951f2"
+                            focus.point.lat="8.5241"
+                            focus.point.lon="76.9366"
+                            placeholder="Search for places"
+                            aria-required="true"
+                            ></ge-autocomplete>
+                        <label for="service">Service Type</label>
+                        <div class="form-group">
+                            <select class="form-control" name="service" id="exampleFormControlSelect1">
+                               <option value="1">Ambulance</option>
+                               <option value="2">Police</option>
+                               <option value="3">Fire and Rescue</option>
+                               <option value="4">Hospital</option>
+                            </select>
+                         </div>
+                         <label for="phone">Phone Number</label>
+                        <input type="number" name="phone" class="form-control"  pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" id="phone" title="INVALID_PHONE" required>
+                        <br>
+                        <button type="submit" class="btn btn-primary rounded">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+    <!-- Add service page end -->
+    <script>
+        const el = document.querySelector('ge-autocomplete')
+        
+        // 'select' event handler - when a user selects an item from the suggestions
+        el.addEventListener('select', (event) => {
+        //     document.getElementById("place").value=event.detail;
+        //   console.log(event.detail)
+        })
+        
+        // 'change' event handler - on every keystroke as the user types
+        el.addEventListener('change', (event) => {
+            document.getElementById('place').value=event.detail
+          console.log(event.detail)
+        })
+        
+        // 'features' event handler - when the GeoJSON features backing the UI change
+        el.addEventListener('features', (event) => {
+        //   console.log(event.detail)
+        })
+        
+        // 'error' event handler - on error
+        el.addEventListener('error', (event) => {
+          console.log(event.detail)
+        })
+        function validate(){
+            var place=document.getElementById('place').value
+            let text = document.getElementById('phone').value;
+            let pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+            if (place==''){
+                alert('ENTER PLACE')
+                return false
+            }
+            else if(!pattern.test(text)){
+                alert('INVALID PHONE')
+                return false
+            }
+            else{
+                return true
+            }
+        }
+    
+    </script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            if('{{response}}'=='200'){
+            Swal.fire(
+                'Sucess!',
+                'Service recorded Sucessfully',
+                'success'
+            )} 
+            if('{{response}}'=='404'){
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })}
+        </script>
+    
+{% endblock content %}
+

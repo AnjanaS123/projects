@@ -1,0 +1,51 @@
+{% extends "admin.html" %}
+{% block content %}
+<link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+
+            <!-- view service details -->
+            <div class="" style="margin:40px 40px 40px 40px; min-height: 600px;">
+                <div class="card flex-fill">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">SERVICES LIST</h5>
+                    </div>
+                    <table class="table table-hover my-0">
+                        <thead>
+                            <tr>
+                                <th>Service Type</th>
+                                <th>Service Name</th>
+                                <th class="d-none d-xl-table-cell">Place</th>
+                                <th class="d-none d-xl-table-cell">Phone</th>
+                                <th class="d-none d-md-table-cell">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for x in item %}
+
+                            <tr>
+
+                                <td>{{x.service_type}}</td>
+                                <td>{{x.service_name}}</td>
+                                <td class="d-none d-xl-table-cell">{{x.service_location}}</td>
+                                <td class="d-none d-xl-table-cell">{{x.service_phone}}</td>
+                                <td class="d-none d-xl-table-cell">
+                                    <form method="post">
+                                        <input type="hidden" name="service_id" value="{{x.service_id}}">
+                                        <button class="btn btn-primary circle" type="submit"><i class="ti-trash"></i></button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                            {% endfor %}
+
+            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- view service details end -->
+
+             <!-- main end -->
+
+{% endblock content %}

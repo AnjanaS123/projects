@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>LeadMark Landing page | Free Bootstrap 4.3.x landing page</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="assets/css/leadmark.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top affix" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">DISASTER MANAGEMENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="wrap1">
+                            <div class="search">
+                               <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                               <button type="submit" class="searchButton">
+                                 <i class="fa fa-search"></i>
+                              </button>
+                            </div>
+                         </div>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+    <!-- Page Header -->
+   <div style="height:100vh ; padding-top:100px ;">
+    <div class="card" style="margin:20px; border-radius:5px ; ">
+        {% for x in item %}
+
+        <h5 class="card-header">Disaster Name : {{x.dis_type}} <span class="text-muted" style="position:absolute ; right:0; margin-top:20px; margin-right:20px; font-size:.8rem;">{{x.dis_time}}</span></h5>
+        <div class="card-body">
+          <h6 class="card-title">Place : {{x.dis_place}}</h6>
+          <h6 class="card-title">Phone Number : {{x.dis_reporterPh}}</h6>
+          <h6 class="card-title">Severity : {{x.dis_severity}}</h6>
+          <!-- <div class="text-right">
+            <h6 class="card-title" style="color:green ;">ACCEPTED</h6>
+            <h6 class="card-title" style="color:red ;">DECLINE</h6>
+          </div> -->
+          <div class="text-right">
+            <form action="" method="post">
+                <input type="hidden" name="response" value="1">
+                <a href="#" class="btn btn-success" onclick="this.parentNode.submit()">ACCEPT</a>
+            </form>
+            <br>
+            <form action="" method="post">
+                <input type="hidden" name="response" value="0">
+                <a href="#" class="btn btn-warning" onclick="this.parentNode.submit()">DECLINE</a>
+            </form>
+        </div>
+        {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="section has-img-bg pb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 my-3">
+                    <h6 class="mb-0">Phone</h6>
+                    <p class="mb-4">+ 123-456-7890</p>
+
+                    <h6 class="mb-0">Address</h6>
+                    <p class="mb-4">12345 Fake ST NoWhere AB Country</p>
+
+                    <h6 class="mb-0">Email</h6>
+                    <p class="mb-0">info@website.com</p>
+                    <p></p>
+                </div>
+                <div class="col-md-7">
+                    <form>
+                        <h4 class="mb-4">Drop Us A Line</h4>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Name">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group col-12">
+                                <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Message"></textarea>
+
+                            </div>
+                            <div class="form-group col-12 mb-0">
+                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Send</button>
+                            </div>                          
+                        </div>                          
+                    </form>
+                </div>
+            </div>
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                
+            </footer>
+            <!-- End of Page Footer -->  
+        </div>
+    </section>
+                     
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<!-- <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
+
+    <!-- Isotope -->
+    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="assets/js/leadmark.js"></script>
+   
+   <script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@geocodeearth/autocomplete-element/dist/bundle.js">
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    if('{{id}}'=='200'){
+    Swal.fire(
+        'Sucess!',
+        'Response recorded Sucessfully',
+        'success'
+    )} 
+    if('{{id}}'=='404'){
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You have already responded once!',
+    })}
+</script>
+</body>
+</html>
